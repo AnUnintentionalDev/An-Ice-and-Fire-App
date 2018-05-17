@@ -1,2 +1,2 @@
 // ANGULAR-MAIN-MODULE
-angular.module('IceFireApp', []);
+var app = angular.module('IceFireApp', ['ngRoute']);

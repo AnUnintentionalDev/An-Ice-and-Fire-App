@@ -1,0 +1,130 @@
+<div class="uk-flex uk-flex-center uk-margin-top uk-margin-bottom">
+  <!-- HOUSES-FETCHED-DATA-WRAPPER-->
+  <div class="uk-width-1-1 fetched-data-wrapper" ng-if="currentClickedData.region">
+      <div class="uk-card uk-card-primary uk-box-shadow-medium uk-card-body uk-border-rounded uk-box-shadow-medium uk-card-hover">
+        <div>
+          <h3 class="uk-margin-remove">House Name <span class="uk-h5 uk-margin-remove"><i class="fa fa-arrow-right"></i> {{currentClickedData.name}}</span> </h3>
+
+          <div ng-if="currentClickedData.titles != 0 || currentClickedData.titles[0] != ''">
+  					<div ng-repeat="seat in currentClickedData.seats">
+              <h3 class="uk-margin-remove">Seat {{1+$index}}<span class="uk-h5 uk-margin-remove"> <i class="fa fa-arrow-right"></i> {{seat}}</span></h3>
+
+  					</div>
+  				</div>
+
+          <h3 class="uk-margin-remove">Region <span class="uk-h5 uk-margin-remove"><i class="fa fa-arrow-right"></i> {{currentClickedData.region}}</span></h3>
+
+          <div ng-if="currentClickedData.coatOfArms">
+            <h3 class="uk-margin-remove">Arm Coat <span class="uk-h5 uk-margin-remove"><i class="fa fa-arrow-right"></i> {{currentClickedData.coatOfArms}}</span></h3>
+          </div>
+
+          <div ng-if="currentClickedData.titles != 0 || currentClickedData.titles[0] != ''">
+
+            <h3 class="uk-margin-remove">No. of Titles <span class="uk-h5 uk-margin-remove"><i class="fa fa-arrow-right"></i></span> {{currentClickedData.titles.length}}</h3>
+            <p class="uk-margin-remove">Titles are :-</p>
+            <ul class="uk-list uk-list-striped uk-padding-small" ng-repeat="title in currentClickedData.titles">
+              <li>{{title}}</li>
+            </ul>
+          </div>
+
+          <div ng-if="currentClickedData.swornMembers.length">
+            <h3 class="uk-margin-remove">Sworn Members <span class="uk-h5 uk-margin-remove"><i class="fa fa-arrow-right"></i> {{currentClickedData.swornMembers.length}}</span></h3>
+          </div>
+
+          <div ng-if="currentClickedData.words">
+            <h3 class="uk-margin-remove">Words <span class="uk-h5 uk-margin-remove"><i class="fa fa-arrow-right"></i> {{currentClickedData.words}}</span></h3>
+          </div>
+
+          <div ng-if="currentClickedData.founded">
+            <h3 class="uk-margin-remove">Founded <span class="uk-h5 uk-margin-remove"><i class="fa fa-arrow-right"></i> {{currentClickedData.founded}}</span></h3>
+          </div>
+
+          <div ng-if="overlord">
+            <h3 class="uk-margin-remove">Overlord <span class="uk-h5 uk-margin-remove"><i class="fa fa-arrow-right"></i> {{overlord}}</span></h3>
+          </div>
+
+          <div ng-if="currentLord">
+            <h3 class="uk-margin-remove">Current Lord <span class="uk-h5 uk-margin-remove"><i class="fa fa-arrow-right"></i> {{currentLord}}</span></h3>
+          </div>
+
+          <div ng-if="heir">
+            <h3 class="uk-margin-remove">Words <span class="uk-h5 uk-margin-remove"><i class="fa fa-arrow-right"></i> {{heir}}</span></h3>
+          </div>
+        </div>
+      </div>
+  </div>
+  <!-- END-OF-HOUSES-FETCHED-DATA-WRAPPER-->
+
+  <!-- BOOKS-FETCHED-DATA-WRAPPER-->
+  <div class="uk-width-1-1 fetched-data-wrapper" ng-if="currentClickedData.authors">
+    <div class="uk-card uk-card-default uk-box-shadow-medium uk-card-body uk-border-rounded uk-box-shadow-medium uk-card-hover">
+      <div>
+        <h3 class="uk-margin-remove">Book Name <span class="uk-h5 uk-margin-remove"><i class="fa fa-arrow-right"></i> {{currentClickedData.name}}</span> </h3>
+
+        <div ng-if="currentClickedData.authors">
+          <h3 class="uk-margin-remove">Authors <span class="uk-h5 uk-margin-remove"><i class="fa fa-arrow-right"></i> {{currentClickedData.authors[0]}}</span> </h3>
+        </div>
+
+        <div ng-if="currentClickedData.country">
+          <h3 class="uk-margin-remove">Country <span class="uk-h5 uk-margin-remove"><i class="fa fa-arrow-right"></i> {{currentClickedData.country}}</span> </h3>
+        </div>
+
+        <div ng-if="currentClickedData.isbn">
+          <h3 class="uk-margin-remove">ISBN No. <span class="uk-h5 uk-margin-remove"><i class="fa fa-arrow-right"></i> {{currentClickedData.isbn}}</span> </h3>
+        </div>
+
+        <div ng-if="currentClickedData.numberOfPages">
+          <h3 class="uk-margin-remove">No. of Pages <span class="uk-h5 uk-margin-remove"><i class="fa fa-arrow-right"></i> {{currentClickedData.numberOfPages}}</span> </h3>
+        </div>
+
+        <div ng-if="currentClickedData.publisher">
+          <h3 class="uk-margin-remove">Publisher <span class="uk-h5 uk-margin-remove"><i class="fa fa-arrow-right"></i> {{currentClickedData.publisher}}</span> </h3>
+        </div>
+
+        <div ng-if="currentClickedData.released">
+          <h3 class="uk-margin-remove">Released On <span class="uk-h5 uk-margin-remove"><i class="fa fa-arrow-right"></i> {{currentClickedData.released | date : 'medium' }}</span> </h3>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- END-OF-BOOKS-FETCHED-DATA-WRAPPER-->
+
+  <!-- CHARACTERS-FETCHED-DATA-WRAPPER-->
+  <div class="uk-width-1-1 fetched-data-wrapper" ng-if="currentClickedData.gender">
+    <div class="uk-card uk-card-default uk-box-shadow-medium uk-card-body uk-border-rounded uk-box-shadow-medium uk-card-hover">
+      <div>
+        <h3 class="uk-margin-remove">Character's Name <span class="uk-h5 uk-margin-remove"><i class="fa fa-arrow-right"></i> {{currentClickedData.aliases[0]}}</span> </h3>
+
+        <div ng-if="currentClickedData.name">
+          <h3 class="uk-margin-remove">Name <span class="uk-h5 uk-margin-remove"><i class="fa fa-arrow-right"></i> {{currentClickedData.name}}</span> </h3>
+        </div>
+
+        <div ng-if="currentClickedData.gender">
+          <h3 class="uk-margin-remove">Gender <span class="uk-h5 uk-margin-remove"><i class="fa fa-arrow-right"></i> {{currentClickedData.gender}}</span> </h3>
+        </div>
+
+        <div ng-if="currentClickedData.culture">
+          <h3 class="uk-margin-remove">Culture <span class="uk-h5 uk-margin-remove"><i class="fa fa-arrow-right"></i> {{currentClickedData.culture}}</span> </h3>
+        </div>
+
+        <div ng-if="currentClickedData.books.length">
+          <h3 class="uk-margin-remove">No. of Books <span class="uk-h5 uk-margin-remove"><i class="fa fa-arrow-right"></i> {{currentClickedData.books.length}}</span> </h3>
+        </div>
+
+        <h2 class="uk-margin-remove">Books Name </h2>
+        <ul class="uk-list uk-list-bullet" ng-if="currentClickedData.books.length">
+          <li ng-repeat="bookName in characterBooks"> {{bookName}} </li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+  <!-- END-OF-CHARACTERS-FETCHED-DATA-WRAPPER-->
+
+</div
+
+
+<div class="uk-text-center uk-margin-bottom">
+  <a ng-href="#/" class="uk-button uk-button-danger uk-border-rounded uk-box-shadow-small"><span class="uk-icon" uk-icon="home"></span> Back</a>
+</div>

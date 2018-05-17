@@ -1,0 +1,40 @@
+<div class="uk-child-width-1-3@m uk-grid-match uk-margin-top" uk-grid-parallax="translate:200">
+  <div ng-repeat="data in allData | filter: search | orderBy: name">
+    <!-- BOOKS-CARD-->
+    <div ng-if="data.authors" ng-init="type='books'">
+      <div class="uk-card uk-card-default uk-card-body uk-box-shadow-small uk-grid-item-match">
+        <h1>Books</h1>
+        <h3 class="uk-heading-primary">Book Name: {{data.name}}</h3>
+        <p class="uk-h4 uk-margin-small">Author: {{data.authors[0]}}</p>
+        <p class="uk-h4 uk-margin-small">ISBN: {{data.isbn}}</p>
+        <p class="uk-h4 uk-margin-small">Publisher: {{data.publisher}}</p>
+
+        <a href="#/{{type}}/{{data.isbn}}" class="uk-button uk-button-primary uk-border-rounded">Show Details</a>
+      </div>
+    </div>
+    <!-- END-OF-BOOKS-CARD-->
+    <!-- HOUSES-CARD-->
+    <div ng-if="data.region" ng-init="type='houses'">
+      <div class="uk-card uk-card-primary uk-card-body uk-box-shadow-small uk-grid-item-match">
+        <h1>Houses</h1>
+        <h3 class="uk-heading-primary">House Name: {{data.name}}</h3>
+        <p class="uk-h4 uk-margin-small">Region: {{data.region}}</p>
+
+        <a href="#/{{type}}/{{data.name}}" class="uk-button uk-button-primary uk-border-rounded">Show Details</a>
+      </div>
+    </div>
+    <!-- END-OF-HOUSES-CARD-->
+    <!-- CHARACTERS-CARD-->
+    <div ng-if="data.gender" ng-init="type='characters'">
+      <div class="uk-card uk-card-secondary uk-card-body uk-box-shadow-small uk-grid-item-match">
+        <h1>Characters</h1>
+        <h3 class="uk-heading-primary">Alias Name: {{data.aliases[0]}}</h3>
+        <p class="uk-h4 uk-margin-small">Gender: {{data.gender}}</p>
+        <p class="uk-h4 uk-margin-small" ng-if="data.culture">Culture: {{data.culture}}</p>
+        <a href="#/{{type}}/{{data.aliases[0]}}" class="uk-button uk-button-primary uk-border-rounded">Show Details</a>
+      </div>
+    </div>
+    <!-- END-OF-CHARACTERS-CARD-->
+  </div>
+
+</div>
